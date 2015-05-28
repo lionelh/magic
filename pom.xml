@@ -19,6 +19,7 @@
 	<description>Magic Listing Application Master Project</description>
 
 	<modules>
+		<module>data</module>
 	</modules>
 
 	<properties>
