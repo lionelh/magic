@@ -1,0 +1,7 @@
+.project
+target
+.settings
+**/.project
+**/target
+**/.settings
+**/target
