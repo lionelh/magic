@@ -29,6 +29,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	@Override
 	public CardEdition create(CardEdition inCardEdition) {
 		em.persist(inCardEdition);
+		em.flush();
 		return inCardEdition;
 	}
 

@@ -26,6 +26,7 @@ public class BlockDaoImpl implements BlockDao {
 	@Override
 	public Block create(Block inBlock) {
 		em.persist(inBlock);
+		em.flush();
 		return inBlock;
 	}
 

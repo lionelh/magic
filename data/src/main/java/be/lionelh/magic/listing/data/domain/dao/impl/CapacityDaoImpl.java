@@ -26,6 +26,7 @@ public class CapacityDaoImpl implements CapacityDao {
 	@Override
 	public Capacity create(Capacity inCapacity) {
 		em.persist(inCapacity);
+		em.flush();
 		return inCapacity;
 	}
 

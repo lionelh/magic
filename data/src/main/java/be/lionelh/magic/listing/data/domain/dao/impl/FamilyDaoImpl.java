@@ -26,6 +26,7 @@ public class FamilyDaoImpl implements FamilyDao {
 	@Override
 	public Family create(Family inFamily) {
 		em.persist(inFamily);
+		em.flush();
 		return inFamily;
 	}
 

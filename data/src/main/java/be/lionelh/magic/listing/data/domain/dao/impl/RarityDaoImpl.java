@@ -26,6 +26,7 @@ public class RarityDaoImpl implements RarityDao {
 	@Override
 	public Rarity create(Rarity inRarity) {
 		em.persist(inRarity);
+		em.flush();
 		return inRarity;
 	}
 

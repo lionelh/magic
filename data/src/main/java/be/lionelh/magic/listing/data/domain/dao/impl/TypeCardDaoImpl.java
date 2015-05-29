@@ -26,6 +26,7 @@ public class TypeCardDaoImpl implements TypeCardDao {
 	@Override
 	public TypeCard create(TypeCard inTypeCard) {
 		em.persist(inTypeCard);
+		em.flush();
 		return inTypeCard;
 	}
 

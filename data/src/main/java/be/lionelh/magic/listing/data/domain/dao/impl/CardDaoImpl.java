@@ -22,6 +22,7 @@ public class CardDaoImpl implements CardDao {
     @Override
     public Card create(Card inCard) {
         em.persist(inCard);
+        em.flush();
         return inCard;
     }
 

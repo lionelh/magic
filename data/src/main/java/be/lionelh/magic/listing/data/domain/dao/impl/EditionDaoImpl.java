@@ -27,6 +27,7 @@ public class EditionDaoImpl implements EditionDao {
 	@Override
 	public Edition create(Edition inEdition) {
 		em.persist(inEdition);
+		em.flush();
 		return inEdition;
 	}
 

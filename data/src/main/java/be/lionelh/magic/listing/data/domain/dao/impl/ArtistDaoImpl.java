@@ -22,6 +22,7 @@ public class ArtistDaoImpl implements ArtistDao {
     @Override
     public Artist create(Artist inArtist) {
         em.persist(inArtist);
+        em.flush();
         return inArtist;
     }
 

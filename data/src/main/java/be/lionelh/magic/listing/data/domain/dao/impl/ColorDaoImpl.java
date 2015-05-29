@@ -26,6 +26,7 @@ public class ColorDaoImpl implements ColorDao {
 	@Override
 	public Color create(Color inColor) {
 		em.persist(inColor);
+		em.flush();
 		return inColor;
 	}
 
