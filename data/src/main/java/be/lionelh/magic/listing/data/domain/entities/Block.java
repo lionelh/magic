@@ -31,9 +31,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_block")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Block.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b"),
-    @NamedQuery(name = "Block.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b WHERE b.name = :name"),
-    @NamedQuery(name = "Block.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b WHERE b.nom = :nom")
+    @NamedQuery(name = "Block.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b"),
+    @NamedQuery(name = "Block.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b WHERE b.name = :name"),
+    @NamedQuery(name = "Block.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Block(b.id,b.name,b.nom,b.creationDate,b.lastUpdateDate) FROM Block b WHERE b.nom = :nom")
 })
 public class Block implements Serializable, Storable {
 

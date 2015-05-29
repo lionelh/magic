@@ -31,9 +31,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_family")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Family.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f"),
-    @NamedQuery(name = "Family.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f WHERE f.name = :name"),
-    @NamedQuery(name = "Family.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f WHERE f.nom = :nom")
+    @NamedQuery(name = "Family.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f"),
+    @NamedQuery(name = "Family.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f WHERE f.name = :name"),
+    @NamedQuery(name = "Family.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Family(f.id,f.name,f.nom,f.creationDate,f.lastUpdateDate) FROM Family f WHERE f.nom = :nom")
 })
 public class Family implements Serializable, Storable {
 

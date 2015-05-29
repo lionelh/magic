@@ -31,9 +31,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_color")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Color.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c"),
-    @NamedQuery(name = "Color.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c WHERE c.name = :name"),
-    @NamedQuery(name = "Color.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c WHERE c.nom = :nom")
+    @NamedQuery(name = "Color.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c"),
+    @NamedQuery(name = "Color.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c WHERE c.name = :name"),
+    @NamedQuery(name = "Color.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Color(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Color c WHERE c.nom = :nom")
 })
 public class Color implements Serializable, Storable {
 

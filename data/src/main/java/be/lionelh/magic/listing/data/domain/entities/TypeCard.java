@@ -31,9 +31,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_type_card")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "TypeCard.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc"),
-    @NamedQuery(name = "TypeCard.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc WHERE tc.name = :name"),
-    @NamedQuery(name = "TypeCard.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc WHERE tc.nom = :nom")
+    @NamedQuery(name = "TypeCard.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc"),
+    @NamedQuery(name = "TypeCard.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc WHERE tc.name = :name"),
+    @NamedQuery(name = "TypeCard.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.TypeCard(tc.id,tc.name,tc.nom,tc.creationDate,tc.lastUpdateDate) FROM TypeCard tc WHERE tc.nom = :nom")
 })
 public class TypeCard implements Serializable, Storable {
 

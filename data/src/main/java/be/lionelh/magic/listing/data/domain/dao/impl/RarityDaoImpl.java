@@ -21,7 +21,7 @@ public class RarityDaoImpl implements RarityDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.RarityDao#create(be.lionelh.magic.data.domain.entities.Rarity)
+	 * @see be.lionelh.magic.data.domain.dao.RarityDao#create(be.lionelh.magic.listing.data.domain.entities.Rarity)
 	 */
 	@Override
 	public Rarity create(Rarity inRarity) {
@@ -61,7 +61,7 @@ public class RarityDaoImpl implements RarityDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.RarityDao#update(be.lionelh.magic.data.domain.entities.Rarity)
+	 * @see be.lionelh.magic.data.domain.dao.RarityDao#update(be.lionelh.magic.listing.data.domain.entities.Rarity)
 	 */
 	@Override
 	public Rarity update(Rarity inRarity) {
@@ -72,7 +72,7 @@ public class RarityDaoImpl implements RarityDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.RarityDao#delete(be.lionelh.magic.data.domain.entities.Rarity)
+	 * @see be.lionelh.magic.data.domain.dao.RarityDao#delete(be.lionelh.magic.listing.data.domain.entities.Rarity)
 	 */
 	@Override
 	public void delete(Rarity inRarity) {

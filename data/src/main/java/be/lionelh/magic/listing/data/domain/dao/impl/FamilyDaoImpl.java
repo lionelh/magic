@@ -21,7 +21,7 @@ public class FamilyDaoImpl implements FamilyDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#create(be.lionelh.magic.data.domain.entities.Family)
+	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#create(be.lionelh.magic.listing.data.domain.entities.Family)
 	 */
 	@Override
 	public Family create(Family inFamily) {
@@ -76,7 +76,7 @@ public class FamilyDaoImpl implements FamilyDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#update(be.lionelh.magic.data.domain.entities.Family)
+	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#update(be.lionelh.magic.listing.data.domain.entities.Family)
 	 */
 	@Override
 	public Family update(Family inFamily) {
@@ -87,7 +87,7 @@ public class FamilyDaoImpl implements FamilyDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#delete(be.lionelh.magic.data.domain.entities.Family)
+	 * @see be.lionelh.magic.data.domain.dao.FamilyDao#delete(be.lionelh.magic.listing.data.domain.entities.Family)
 	 */
 	@Override
 	public void delete(Family inFamily) {

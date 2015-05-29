@@ -22,7 +22,7 @@ public class EditionDaoImpl implements EditionDao {
 
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.EditionDao#create(be.lionelh.magic.data.domain.entities.Edition)
+	 * @see be.lionelh.magic.data.domain.dao.EditionDao#create(be.lionelh.magic.listing.data.domain.entities.Edition)
 	 */
 	@Override
 	public Edition create(Edition inEdition) {
@@ -92,7 +92,7 @@ public class EditionDaoImpl implements EditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.EditionDao#update(be.lionelh.magic.data.domain.entities.Edition)
+	 * @see be.lionelh.magic.data.domain.dao.EditionDao#update(be.lionelh.magic.listing.data.domain.entities.Edition)
 	 */
 	@Override
 	public Edition update(Edition inEdition) {
@@ -103,7 +103,7 @@ public class EditionDaoImpl implements EditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.EditionDao#delete(be.lionelh.magic.data.domain.entities.Edition)
+	 * @see be.lionelh.magic.data.domain.dao.EditionDao#delete(be.lionelh.magic.listing.data.domain.entities.Edition)
 	 */
 	@Override
 	public void delete(Edition inEdition) {

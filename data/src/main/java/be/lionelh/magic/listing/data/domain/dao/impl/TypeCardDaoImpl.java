@@ -21,7 +21,7 @@ public class TypeCardDaoImpl implements TypeCardDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#create(be.lionelh.magic.data.domain.entities.TypeCard)
+	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#create(be.lionelh.magic.listing.data.domain.entities.TypeCard)
 	 */
 	@Override
 	public TypeCard create(TypeCard inTypeCard) {
@@ -76,7 +76,7 @@ public class TypeCardDaoImpl implements TypeCardDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#update(be.lionelh.magic.data.domain.entities.TypeCard)
+	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#update(be.lionelh.magic.listing.data.domain.entities.TypeCard)
 	 */
 	@Override
 	public TypeCard update(TypeCard inTypeCard) {
@@ -87,7 +87,7 @@ public class TypeCardDaoImpl implements TypeCardDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#delete(be.lionelh.magic.data.domain.entities.TypeCard)
+	 * @see be.lionelh.magic.data.domain.dao.TypeCardDao#delete(be.lionelh.magic.listing.data.domain.entities.TypeCard)
 	 */
 	@Override
 	public void delete(TypeCard inTypeCard) {

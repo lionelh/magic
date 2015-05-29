@@ -21,7 +21,7 @@ public class ColorDaoImpl implements ColorDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.ColorDao#create(be.lionelh.magic.data.domain.entities.Color)
+	 * @see be.lionelh.magic.data.domain.dao.ColorDao#create(be.lionelh.magic.listing.data.domain.entities.Color)
 	 */
 	@Override
 	public Color create(Color inColor) {
@@ -91,7 +91,7 @@ public class ColorDaoImpl implements ColorDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.ColorDao#update(be.lionelh.magic.data.domain.entities.Color)
+	 * @see be.lionelh.magic.data.domain.dao.ColorDao#update(be.lionelh.magic.listing.data.domain.entities.Color)
 	 */
 	@Override
 	public Color update(Color inColor) {
@@ -102,7 +102,7 @@ public class ColorDaoImpl implements ColorDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.ColorDao#delete(be.lionelh.magic.data.domain.entities.Color)
+	 * @see be.lionelh.magic.data.domain.dao.ColorDao#delete(be.lionelh.magic.listing.data.domain.entities.Color)
 	 */
 	@Override
 	public void delete(Color inColor) {

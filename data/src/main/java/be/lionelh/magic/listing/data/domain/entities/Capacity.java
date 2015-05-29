@@ -31,9 +31,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_capacity")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Capacity.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c"),
-    @NamedQuery(name = "Capacity.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c WHERE c.name = :name"),
-    @NamedQuery(name = "Capacity.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c WHERE c.nom = :nom")
+    @NamedQuery(name = "Capacity.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c"),
+    @NamedQuery(name = "Capacity.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c WHERE c.name = :name"),
+    @NamedQuery(name = "Capacity.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Capacity(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Capacity c WHERE c.nom = :nom")
 })
 public class Capacity implements Serializable, Storable {
 

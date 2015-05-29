@@ -37,12 +37,12 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_card")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Card.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c"),
-    @NamedQuery(name = "Card.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.name = :name"),
-    @NamedQuery(name = "Card.FINDBYNOM", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.nom = :nom"),
-    @NamedQuery(name = "Card.FINDBYTYPECARD", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.typeCard.name = :typeCard"),
-    @NamedQuery(name = "Card.FINDBYCOLORWITHOUTMULTI", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.color.name = :color"),
-    @NamedQuery(name = "Card.FINDBYFAMILY", query = "SELECT new be.lionelh.magic.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c, in(c.families) f WHERE f.name = :family"),
+    @NamedQuery(name = "Card.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c"),
+    @NamedQuery(name = "Card.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.name = :name"),
+    @NamedQuery(name = "Card.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.nom = :nom"),
+    @NamedQuery(name = "Card.FINDBYTYPECARD", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.typeCard.name = :typeCard"),
+    @NamedQuery(name = "Card.FINDBYCOLORWITHOUTMULTI", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c WHERE c.color.name = :color"),
+    @NamedQuery(name = "Card.FINDBYFAMILY", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Card(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate,c.color,c.typeCard) FROM Card c, in(c.families) f WHERE f.name = :family"),
 })
 public class Card implements Serializable, Storable {
 

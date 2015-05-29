@@ -24,7 +24,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#create(be.lionelh.magic.data.domain.entities.CardEdition)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#create(be.lionelh.magic.listing.data.domain.entities.CardEdition)
 	 */
 	@Override
 	public CardEdition create(CardEdition inCardEdition) {
@@ -41,7 +41,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findById(be.lionelh.magic.data.domain.entities.CardEditionPK)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findById(be.lionelh.magic.listing.data.domain.entities.CardEditionPK)
 	 */
 	@Override
 	public CardEdition findById(CardEditionPK inId) {
@@ -49,7 +49,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findByCard(be.lionelh.magic.data.domain.entities.Card)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findByCard(be.lionelh.magic.listing.data.domain.entities.Card)
 	 */
 	@Override
 	public List<CardEdition> findByCard(Card inCard) {
@@ -59,7 +59,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findByEdition(be.lionelh.magic.data.domain.entities.Edition)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findByEdition(be.lionelh.magic.listing.data.domain.entities.Edition)
 	 */
 	@Override
 	public List<CardEdition> findByEdition(Edition inEdition) {
@@ -69,7 +69,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#update(be.lionelh.magic.data.domain.entities.CardEdition)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#update(be.lionelh.magic.listing.data.domain.entities.CardEdition)
 	 */
 	@Override
 	public CardEdition update(CardEdition inCardEdition) {
@@ -80,7 +80,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#delete(be.lionelh.magic.data.domain.entities.CardEdition)
+	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#delete(be.lionelh.magic.listing.data.domain.entities.CardEdition)
 	 */
 	@Override
 	public void delete(CardEdition inCardEdition) {

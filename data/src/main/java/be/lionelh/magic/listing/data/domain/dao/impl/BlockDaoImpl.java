@@ -21,7 +21,7 @@ public class BlockDaoImpl implements BlockDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.BlockDao#create(be.lionelh.magic.data.domain.entities.Block)
+	 * @see be.lionelh.magic.data.domain.dao.BlockDao#create(be.lionelh.magic.listing.data.domain.entities.Block)
 	 */
 	@Override
 	public Block create(Block inBlock) {
@@ -76,7 +76,7 @@ public class BlockDaoImpl implements BlockDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.BlockDao#update(be.lionelh.magic.data.domain.entities.Block)
+	 * @see be.lionelh.magic.data.domain.dao.BlockDao#update(be.lionelh.magic.listing.data.domain.entities.Block)
 	 */
 	@Override
 	public Block update(Block inBlock) {
@@ -87,7 +87,7 @@ public class BlockDaoImpl implements BlockDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.BlockDao#delete(be.lionelh.magic.data.domain.entities.Block)
+	 * @see be.lionelh.magic.data.domain.dao.BlockDao#delete(be.lionelh.magic.listing.data.domain.entities.Block)
 	 */
 	@Override
 	public void delete(Block inBlock) {

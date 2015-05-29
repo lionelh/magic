@@ -31,8 +31,8 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_artist")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Artist.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Artist(a.id,a.name,a.creationDate,a.lastUpdateDate) FROM Artist a"),
-    @NamedQuery(name = "Artist.FINDBYNAME", query = "SELECT new be.lionelh.magic.data.domain.entities.Artist(a.id,a.name,a.creationDate,a.lastUpdateDate) FROM Artist a WHERE a.name = :name")
+    @NamedQuery(name = "Artist.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Artist(a.id,a.name,a.creationDate,a.lastUpdateDate) FROM Artist a"),
+    @NamedQuery(name = "Artist.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Artist(a.id,a.name,a.creationDate,a.lastUpdateDate) FROM Artist a WHERE a.name = :name")
 })
 public class Artist implements Serializable, Storable {
 

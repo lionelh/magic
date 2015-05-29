@@ -21,7 +21,7 @@ public class CapacityDaoImpl implements CapacityDao {
     private EntityManager em;
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#create(be.lionelh.magic.data.domain.entities.Capacity)
+	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#create(be.lionelh.magic.listing.data.domain.entities.Capacity)
 	 */
 	@Override
 	public Capacity create(Capacity inCapacity) {
@@ -76,7 +76,7 @@ public class CapacityDaoImpl implements CapacityDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#update(be.lionelh.magic.data.domain.entities.Capacity)
+	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#update(be.lionelh.magic.listing.data.domain.entities.Capacity)
 	 */
 	@Override
 	public Capacity update(Capacity inCapacity) {
@@ -87,7 +87,7 @@ public class CapacityDaoImpl implements CapacityDao {
 	}
 
 	/**
-	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#delete(be.lionelh.magic.data.domain.entities.Capacity)
+	 * @see be.lionelh.magic.data.domain.dao.CapacityDao#delete(be.lionelh.magic.listing.data.domain.entities.Capacity)
 	 */
 	@Override
 	public void delete(Capacity inCapacity) {

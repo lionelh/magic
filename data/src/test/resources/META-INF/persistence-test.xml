@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    
+    <persistence-unit name="magicDataPU-test" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>be.lionelh.magic.listing.data.domain.entities.Artist</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Block</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Capacity</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Card</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.CardEdition</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Color</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Edition</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Family</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.Rarity</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.TypeCard</class>
+        
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>    
+
+        <properties>
+            <property name="eclipselink.target-server" value="None" />
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="sa" />
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create" />
+			<property name="javax.persistence.schema-generation.scripts.drop-target" value="drop.ddl" />
+			<property name="javax.persistence.schema-generation.scripts.create-target" value="create.ddl" />
+			<property name="javax.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
+			<property name="javax.persistence.schema-generation.create-source" value="metadata" />
+			<property name="javax.persistence.schema-generation.drop-source" value="metadata" />
+            
+            <property name="eclipselink.logging.level" value="FINE" />
+            <property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+            <property name="eclipselink.jdbc.native-sql" value="true" />
+            <property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+            <property name="eclipselink.jdbc.cache-statements" value="true" />
+            <property name="eclipselink.jdbc.bind-parameters" value="true" />
+            <property name="eclipselink.logging.level" value="INFO" />
+            <property name="eclipselink.logging.timestamp" value="true" />
+            <property name="eclipselink.logging.thread" value="true" />
+            <property name="eclipselink.logging.exceptions" value="true" />
+            <!-- disable the cache -->
+            <property name="eclipselink.cache.type.default" value="NONE" />
+            <property name="eclipselink.cache.shared.default" value="false" />
+            <property name="eclipselink.weaving" value="false" />
+        </properties>
+    </persistence-unit>
+</persistence>

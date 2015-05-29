@@ -31,8 +31,8 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_rarity")
 @EntityListeners({DatesListener.class})
 @NamedQueries({
-    @NamedQuery(name = "Rarity.FINDALL", query = "SELECT new be.lionelh.magic.data.domain.entities.Rarity(r.id,r.description,r.abbreviation,r.creationDate,r.lastUpdateDate) FROM Rarity r"),
-    @NamedQuery(name = "Rarity.FINDBYABBREVIATION", query = "SELECT new be.lionelh.magic.data.domain.entities.Rarity(r.id,r.description,r.abbreviation,r.creationDate,r.lastUpdateDate) FROM Rarity r WHERE r.abbreviation = :abbreviation")
+    @NamedQuery(name = "Rarity.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Rarity(r.id,r.description,r.abbreviation,r.creationDate,r.lastUpdateDate) FROM Rarity r"),
+    @NamedQuery(name = "Rarity.FINDBYABBREVIATION", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Rarity(r.id,r.description,r.abbreviation,r.creationDate,r.lastUpdateDate) FROM Rarity r WHERE r.abbreviation = :abbreviation")
 })
 public class Rarity implements Serializable, Storable {
 
