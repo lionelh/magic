@@ -50,7 +50,6 @@ public class CardDaoTest {
         f2.setNom("Famille002");
         c.getFamilies().add(f2);
         Card newC = this.cardDao.create(c);
-        System.out.println(newC);
         assertNotNull(newC);
         assertEquals(new Long(649), newC.getId());
         assertEquals("Card003", newC.getName());
@@ -75,7 +74,6 @@ public class CardDaoTest {
         Card c = this.cardDao.findByName("Black Vise");
         assertNotNull(c);
         assertEquals(new Long(48), c.getId());
-        //assertEquals("Basic Land", c.getTypeCard().getName());
     }
 
     @Test
@@ -107,10 +105,10 @@ public class CardDaoTest {
 
     @Test
     public void testDelete() {
-        Card c = this.cardDao.findById(221L); // 527L
+        Card c = this.cardDao.findById(221L);
 
         this.cardDao.delete(c);
-        assertNull(this.cardDao.findById(221L)); // 527L
+        assertNull(this.cardDao.findById(221L));
         assertEquals(647, this.cardDao.findAll().size());
     }
 }
