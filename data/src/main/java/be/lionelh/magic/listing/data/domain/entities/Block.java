@@ -49,11 +49,11 @@ public class Block implements Serializable, Storable {
     private String nom;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "CREATION_DATE", insertable = true, nullable = false, unique = false, updatable = true)
+    @Column(name = "BL_CREATION_DATE", insertable = true, nullable = false, unique = false, updatable = true)
     private Date creationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "LAST_UPDATE_DATE", insertable = true, nullable = false, unique = false, updatable = true)
+    @Column(name = "BL_LAST_UPDATE_DATE", insertable = true, nullable = false, unique = false, updatable = true)
     private Date lastUpdateDate;
 
     @OneToMany(mappedBy = "block", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.LAZY)
