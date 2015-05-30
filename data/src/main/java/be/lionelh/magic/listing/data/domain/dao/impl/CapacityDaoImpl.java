@@ -66,7 +66,7 @@ public class CapacityDaoImpl implements CapacityDao {
 	 */
 	@Override
 	public Capacity findByNom(String inNom) {
-		TypedQuery<Capacity> query = em.createNamedQuery("Capacity.FINDBYNAME", Capacity.class);
+		TypedQuery<Capacity> query = em.createNamedQuery("Capacity.FINDBYNOM", Capacity.class);
         query.setParameter("nom", inNom);
         List<Capacity> result = query.getResultList();
         if (result.isEmpty()) {
