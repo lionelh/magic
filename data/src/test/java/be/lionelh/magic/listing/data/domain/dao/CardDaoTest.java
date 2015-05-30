@@ -29,30 +29,33 @@ public class CardDaoTest {
     @TestedObject
     @SpringBeanByType
     private CardDao cardDao;
+    
+    @SpringBeanByType
+    private ColorDao colorDao;
+
+    @SpringBeanByType
+    private TypeCardDao typeCardDao;
+
+    @SpringBeanByType
+    private FamilyDao familyDao;
 
     @Test
     public void testCreate() {
         Card c = new Card();
         c.setName("Card003");
-        Color color = new Color();
-        color.setName("Color003");
-        TypeCard tc = new TypeCard();
-        tc.setName("Type003");
+        Color color = this.colorDao.findById(1L);
+        TypeCard tc = this.typeCardDao.findById(2L);
         c.setColor(color);
         c.setTypeCard(tc);
 
-        Family f1 = new Family();
-        f1.setName("Family001");
-        f1.setNom("Famille001");
+        Family f1 = this.familyDao.findById(3L);
         c.getFamilies().add(f1);
-        Family f2 = new Family();
-        f2.setName("Family002");
-        f2.setNom("Famille002");
+        Family f2 = this.familyDao.findById(4L);
         c.getFamilies().add(f2);
-        Card newC = this.cardDao.create(c);
-        assertNotNull(newC);
-        assertEquals(new Long(649), newC.getId());
-        assertEquals("Card003", newC.getName());
+        Card newCard = this.cardDao.create(c);
+        assertNotNull(newCard);
+        assertEquals(new Long(649), newCard.getId());
+        assertEquals("Card003", newCard.getName());
     }
 
     @Test
