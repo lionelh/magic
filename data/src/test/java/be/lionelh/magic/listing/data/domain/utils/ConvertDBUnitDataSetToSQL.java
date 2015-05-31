@@ -1,4 +1,4 @@
-package be.lionelh.magic.listing.data.doamin.utils;
+package be.lionelh.magic.listing.data.domain.utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
