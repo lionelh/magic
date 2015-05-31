@@ -670,7 +670,7 @@ INSERT INTO magic_card (ca_id,ca_name,ca_creation_date,ca_last_update_date,ca_co
 INSERT INTO magic_block (bl_id,bl_name,bl_creation_date,bl_last_update_date) VALUES (1,'Mirrodin','2015-02-24 16:13:57','2015-02-24 16:13:57');
 INSERT INTO magic_block (bl_id,bl_name,bl_nom,bl_creation_date,bl_last_update_date) VALUES (2,'Ice age','Ere glaciaire','2015-02-24 16:13:57','2015-02-24 16:13:57');
 INSERT INTO magic_edition (ed_id,ed_name,ed_creation_date,ed_last_update_date,ed_symbol,ed_nom,ed_abbreviation,ed_bl_id) VALUES (1,'Mirrodin','2015-02-24 16:13:57','2015-02-24 16:13:57',1,'Mirrodin','MR',1);
-INSERT INTO magic_edition (ed_id,ed_name,ed_creation_date,ed_last_update_date,ed_symbol,ed_nom,ed_abbreviation) VALUES (2,'Fourth edition','2015-02-24 16:13:57','2015-02-24 16:13:57',0,'4ème édition','4E');
+INSERT INTO magic_edition (ed_id,ed_name,ed_creation_date,ed_last_update_date,ed_symbol,ed_abbreviation) VALUES (2,'Fourth edition','2015-02-24 16:13:57','2015-02-24 16:13:57',0,'4E');
 INSERT INTO magic_family (fa_id,fa_name,fa_creation_date,fa_last_update_date) VALUES (1,'Horror','2015-02-24 16:13:57','2015-02-24 16:13:57');
 INSERT INTO magic_family (fa_id,fa_name,fa_creation_date,fa_last_update_date) VALUES (2,'Elemental','2015-02-24 16:13:57','2015-02-24 16:13:57');
 INSERT INTO magic_family (fa_id,fa_name,fa_creation_date,fa_last_update_date) VALUES (3,'Human','2015-02-24 16:13:57','2015-02-24 16:13:57');

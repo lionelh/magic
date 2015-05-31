@@ -35,7 +35,8 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @NamedQueries({
     @NamedQuery(name = "Edition.FINDALL", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Edition(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Edition c"),
     @NamedQuery(name = "Edition.FINDBYNAME", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Edition(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Edition c WHERE c.name = :name"),
-    @NamedQuery(name = "Edition.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Edition(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Edition c WHERE c.nom = :nom")
+    @NamedQuery(name = "Edition.FINDBYNOM", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Edition(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Edition c WHERE c.nom = :nom"),
+    @NamedQuery(name = "Edition.FINDBYABBREVIATION", query = "SELECT new be.lionelh.magic.listing.data.domain.entities.Edition(c.id,c.name,c.nom,c.creationDate,c.lastUpdateDate) FROM Edition c WHERE c.abbreviation = :abbreviation")
 })
 public class Edition implements Serializable, Storable {
 
