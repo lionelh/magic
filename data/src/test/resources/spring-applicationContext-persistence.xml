@@ -45,7 +45,7 @@
     </bean>
 
     <bean id="jpaAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
-        <property name="databasePlatform" value="org.eclipse.persistence.platform.database.H2Platform" />
+        <property name="databasePlatform" value="org.eclipse.persistence.platform.database.HSQLPlatform" />
     	<property name="showSql" value="true" />
     </bean>
 

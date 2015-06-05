@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Capacity;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class CapacityDaoTest {
 
     @TestedObject
@@ -34,7 +39,8 @@ public class CapacityDaoTest {
 
         Capacity newCapacity = this.capacityDao.create(c);
         assertNotNull(newCapacity);
-        assertEquals(new Long(3), newCapacity.getId());
+        assertNotNull(newCapacity.getId());
+        assertEquals(3, this.capacityDao.findAll().size());
         assertEquals("Capacity 001", newCapacity.getName());
     }
 

@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Artist;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class ArtistDaoTest {
 
     @TestedObject
@@ -32,9 +37,9 @@ public class ArtistDaoTest {
     	Artist art = new Artist();
     	art.setName("Artist 001");
         Artist newArtist = this.artistDao.create(art);
-        System.out.println(newArtist);
         assertNotNull(newArtist);
-        assertEquals(new Long(111), newArtist.getId());
+        assertNotNull(newArtist.getId());
+        assertEquals(12, this.artistDao.findAll().size());
         assertEquals("Artist 001", newArtist.getName());
     }
 
@@ -42,7 +47,7 @@ public class ArtistDaoTest {
     public void testFindAll() {
         List<Artist> l = this.artistDao.findAll();
         assertNotNull(l);
-        assertEquals(110, l.size());
+        assertEquals(11, l.size());
     }
 
     @Test
@@ -83,6 +88,6 @@ public class ArtistDaoTest {
 
         this.artistDao.delete(a);
         assertNull(this.artistDao.findById(108L));
-        assertEquals(109, this.artistDao.findAll().size());
+        assertEquals(10, this.artistDao.findAll().size());
     }
 }

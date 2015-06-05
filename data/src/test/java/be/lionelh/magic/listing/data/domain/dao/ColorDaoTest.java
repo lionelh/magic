@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Color;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class ColorDaoTest {
 
     @TestedObject
@@ -34,7 +39,8 @@ public class ColorDaoTest {
 
         Color newColor = this.colorDao.create(c);
         assertNotNull(newColor);
-        assertEquals(new Long(8), newColor.getId());
+        assertNotNull(newColor.getId());
+        assertEquals(8, this.colorDao.findAll().size());
         assertEquals("Color 001", newColor.getName());
     }
 

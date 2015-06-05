@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <magic_color co_id="2" co_name="Black" co_abbreviation="B" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" co_nom="Noir" />
+  <magic_color co_id="1" co_name="Artifact" co_abbreviation="Art" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="3" co_name="Blue" co_abbreviation="U" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="4" co_name="White" co_abbreviation="W" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="5" co_name="Red" co_abbreviation="R" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="6" co_name="Land" co_abbreviation="Lnd" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="7" co_name="Green" co_abbreviation="G" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="7" tc_name="Sorcery" tc_nom="Rituel" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="1" tc_name="Artifact" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="2" tc_name="Creature" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="3" tc_name="Instant" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="4" tc_name="Artifact Creature" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="5" tc_name="Artifact Land" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="6" tc_name="Enchantment" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="8" tc_name="Land" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="9" tc_name="Legendary Artifact Creature" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="10" tc_name="Basic Land" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="11" tc_name="Legendary Creature" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_type_card tc_id="12" tc_name="Legendary Artifact" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
+  <magic_card ca_id="48" ca_name="Black Vise" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="1" ca_tc_id="1" ca_nom="Etau du supplice"/>
+  <magic_card ca_id="1" ca_name="AEther Spellbomb" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="1" ca_tc_id="1" />
+  <magic_card ca_id="221" ca_name="Goblin King" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="5" ca_tc_id="2" />
+  <magic_card ca_id="527" ca_name="Swamp" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="6" ca_tc_id="10" />
+  <magic_block bl_id="2" bl_name="Ice age" bl_creation_date="2015-02-24 16:13:57" bl_last_update_date="2015-02-24 16:13:57" bl_nom="Ere glaciaire" />
+  <magic_block bl_id="1" bl_name="Mirrodin" bl_creation_date="2015-02-24 16:13:57" bl_last_update_date="2015-02-24 16:13:57" />
+  <magic_edition ed_id="2" ed_name="Fourth edition" ed_creation_date="2015-02-24 16:13:57" ed_last_update_date="2015-02-24 16:13:57" ed_symbol="0" ed_nom="4eme edition" ed_abbreviation="4E" />
+  <magic_edition ed_id="1" ed_name="Mirrodin" ed_creation_date="2015-02-24 16:13:57" ed_last_update_date="2015-02-24 16:13:57" ed_symbol="1" ed_abbreviation="MR" />
+  <magic_family fa_id="11" fa_name="Soldier" fa_nom="Soldat" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="16" fa_name="Knight" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="24" fa_name="Wall" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="33" fa_name="Spirit" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="50" fa_name="Goblin" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="98" fa_name="Swamp" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_card_family caf_ca_id="221" caf_fa_id="50" />
+  <magic_card_family caf_ca_id="527" caf_fa_id="98" />
+  <magic_rarity ra_id="1" ra_abbreviation="C" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
+  <magic_rarity ra_id="2" ra_abbreviation="U" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
+  <magic_rarity ra_id="3" ra_abbreviation="R" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
+  <magic_card_edition ce_ca_id="1" ce_ed_id="1" ce_versions="1" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1"    />
+  <magic_card_edition ce_ca_id="48" ce_ed_id="2" ce_versions="1" ce_ra_id="2" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1"    />
+  <magic_card_edition ce_ca_id="221" ce_ed_id="2" ce_versions="1" ce_ra_id="3" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1RR" ce_power="2" ce_toughness="2"  />
+  <magic_card_edition ce_ca_id="527" ce_ed_id="2" ce_versions="3" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57"     />
+  <magic_card_edition ce_ca_id="527" ce_ed_id="1" ce_versions="4" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57"     />
+  <magic_artist art_id="1" art_name="Jim Nelson" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="2" art_name="Mark Tedin" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="3" art_name="Richard Thomas" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="5" art_name="Dan Frazier" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="12" art_name="Rob Alexander" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="19" art_name="Jesper Myrfors" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="52" art_name="Martina Pilcerova" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="75" art_name="John Avon" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="108" art_name="Richard Sardinha" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="109" art_name="Mark Brill" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_artist art_id="110" art_name="Anthony Waters" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
+  <magic_card_edition_artist cea_ca_id="1" cea_ed_id="1" cea_art_id="1" />
+  <magic_card_edition_artist cea_ca_id="48" cea_ed_id="2" cea_art_id="3" />
+  <magic_card_edition_artist cea_ca_id="221" cea_ed_id="2" cea_art_id="19" />
+  <magic_card_edition_artist cea_ca_id="527" cea_ed_id="2" cea_art_id="5" />
+  <magic_card_edition_artist cea_ca_id="527" cea_ed_id="1" cea_art_id="2" />
+  <magic_card_edition_artist cea_ca_id="527" cea_ed_id="1" cea_art_id="12" />
+  <magic_card_edition_artist cea_ca_id="527" cea_ed_id="1" cea_art_id="52" />
+  <magic_card_edition_artist cea_ca_id="527" cea_ed_id="1" cea_art_id="75" />
+  <magic_capacity cp_id="2" cp_name="First strike" cp_nom="Initiative" cp_creation_date="2015-02-24 16:13:57" cp_last_update_date="2015-02-24 16:13:57" />
+  <magic_capacity cp_id="1" cp_name="Haste" cp_creation_date="2015-02-24 16:13:57" cp_last_update_date="2015-02-24 16:13:57" />
+</dataset>

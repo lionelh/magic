@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Edition;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class EditionDaoTest {
 
     @TestedObject
@@ -31,11 +36,12 @@ public class EditionDaoTest {
     public void testCreate() {
         Edition e = new Edition();
         e.setName("Edition 001");
+        e.setAbbreviation("E1");
 
         Edition newEdition = this.editionDao.create(e);
         assertNotNull(newEdition);
-        System.out.println(this.editionDao.findAll());
-        assertEquals(new Long(3), newEdition.getId());
+        assertNotNull(newEdition.getId());
+        assertEquals(3, this.editionDao.findAll().size());
         assertEquals("Edition 001", newEdition.getName());
     }
 
@@ -62,10 +68,10 @@ public class EditionDaoTest {
 
     @Test
     public void testFindByNom() {
-        Edition e = this.editionDao.findByNom("Mirrodin");
+        Edition e = this.editionDao.findByNom("4eme edition");
         assertNotNull(e);
-        assertEquals("Mirrodin", e.getName());
-        assertEquals(new Long(1), e.getId());
+        assertEquals("Fourth edition", e.getName());
+        assertEquals(new Long(2), e.getId());
     }
 
     @Test
@@ -73,14 +79,13 @@ public class EditionDaoTest {
         Edition e = this.editionDao.findByAbbreviation("4E");
         assertNotNull(e);
         assertEquals("Fourth edition", e.getName());
-        assertNull(e.getNom());
         assertEquals(new Long(2), e.getId());
     }
 
     @Test
     public void testUpdate() {
-        Edition e = this.editionDao.findById(2L);
-        assertEquals("Fourth edition", e.getName());
+        Edition e = this.editionDao.findById(1L);
+        assertEquals("Mirrodin", e.getName());
         Edition oldEdition = new Edition();
         oldEdition.setId(e.getId());
         oldEdition.setName(e.getName());
@@ -88,9 +93,9 @@ public class EditionDaoTest {
         oldEdition.setCreationDate(e.getCreationDate());
         oldEdition.setLastUpdateDate(e.getLastUpdateDate());
 
-        e.setNom("4eme edition");
+        e.setNom("Mirrodin");
         Edition updatedEdition = this.editionDao.update(e);
-        assertEquals("4eme edition", updatedEdition.getNom()); // Was null
+        assertEquals("Mirrodin", updatedEdition.getNom()); // Was null
         
         assertNotEquals(oldEdition.getLastUpdateDate(), updatedEdition.getLastUpdateDate()); // This date must have change !
         assertEquals(oldEdition.getCreationDate(), updatedEdition.getCreationDate()); // This date must not have changed !

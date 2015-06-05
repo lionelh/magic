@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Rarity;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class RarityDaoTest {
 
     @TestedObject
@@ -30,14 +35,15 @@ public class RarityDaoTest {
     @Test
     public void testCreate() {
         Rarity r = new Rarity();
-        r.setAbbreviation("F");
+        r.setAbbreviation("R1");
         r.setDescription("Rarity 001");
 
         Rarity newRarity = this.rarityDao.create(r);
         assertNotNull(newRarity);
-        assertEquals(new Long(4), newRarity.getId());
+        assertNotNull(newRarity.getId());
+        assertEquals(4, this.rarityDao.findAll().size());
         assertEquals("Rarity 001", newRarity.getDescription());
-        assertEquals("F", newRarity.getAbbreviation());
+        assertEquals("R1", newRarity.getAbbreviation());
     }
 
     @Test

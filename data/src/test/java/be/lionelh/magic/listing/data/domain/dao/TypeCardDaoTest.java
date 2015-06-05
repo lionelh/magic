@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.TypeCard;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class TypeCardDaoTest {
 
     @TestedObject
@@ -34,7 +39,8 @@ public class TypeCardDaoTest {
 
         TypeCard newTypeCard = this.typeCardDao.create(tc);
         assertNotNull(newTypeCard);
-        assertEquals(new Long(13), newTypeCard.getId());
+        assertNotNull(newTypeCard.getId());
+        assertEquals(13, this.typeCardDao.findAll().size());
         assertEquals("TypeCard 001", newTypeCard.getName());
     }
 

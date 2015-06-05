@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Family;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class FamilyDaoTest {
 
     @TestedObject
@@ -28,14 +33,14 @@ public class FamilyDaoTest {
     private FamilyDao familyDao;
 
     @Test
-    public void testCreate() {
+    public void testSave() {
         Family f = new Family();
         f.setName("Family 001");
 
         Family newFamily = this.familyDao.create(f);
         assertNotNull(newFamily);
-        System.out.println(this.familyDao.findAll());
-        assertEquals(new Long(104), newFamily.getId());
+        assertNotNull(newFamily.getId());
+        assertEquals(7, this.familyDao.findAll().size());
         assertEquals("Family 001", newFamily.getName());
     }
 
@@ -43,7 +48,7 @@ public class FamilyDaoTest {
     public void testFindAll() {
         List<Family> l = this.familyDao.findAll();
         assertNotNull(l);
-        assertEquals(103, l.size());
+        assertEquals(6, l.size());
     }
 
     @Test
@@ -89,10 +94,10 @@ public class FamilyDaoTest {
 
     @Test
     public void testDelete() {
-        Family f = this.familyDao.findById(2L);
+        Family f = this.familyDao.findById(50L);
 
         this.familyDao.delete(f);
-        assertNull(this.familyDao.findById(2L));
-        assertEquals(102, this.familyDao.findAll().size());
+        assertNull(this.familyDao.findById(50L));
+        assertEquals(5, this.familyDao.findAll().size());
     }
 }

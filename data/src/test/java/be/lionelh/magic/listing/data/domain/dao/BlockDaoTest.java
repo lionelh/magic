@@ -10,6 +10,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.unitils.UnitilsJUnit4TestClassRunner;
+import org.unitils.database.annotations.Transactional;
+import org.unitils.database.util.TransactionMode;
+import org.unitils.dbunit.annotation.DataSet;
 import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBeanByType;
@@ -21,6 +24,8 @@ import be.lionelh.magic.listing.data.domain.entities.Block;
  */
 @RunWith(UnitilsJUnit4TestClassRunner.class)
 @SpringApplicationContext("spring-applicationContext-persistence.xml")
+@Transactional(value = TransactionMode.ROLLBACK)
+@DataSet("/dataset.xml")
 public class BlockDaoTest {
 
     @TestedObject
@@ -34,7 +39,8 @@ public class BlockDaoTest {
 
         Block newBlock = this.blockDao.create(b);
         assertNotNull(newBlock);
-        assertEquals(new Long(3), newBlock.getId());
+        assertNotNull(newBlock.getId());
+        assertEquals(3, this.blockDao.findAll().size());
         assertEquals("Block 001", newBlock.getName());
     }
 

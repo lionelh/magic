@@ -16,8 +16,6 @@
 	<description>Lionelh Magic Listing application Data project</description>
 	<packaging>ejb</packaging>
 
-	<!-- Packaging CAN NOT BE CHANGED -->
-
 	<build>
 		<plugins>
 			<plugin>
@@ -40,21 +38,19 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>1.1</version>
-			<scope>test</scope>
-		</dependency>
 		<!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>jdom</groupId>
+            <artifactId>jdom</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		<dependency>
-    		<groupId>com.h2database</groupId>
-    		<artifactId>h2</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.unitils</groupId>
 			<artifactId>unitils-core</artifactId>
@@ -62,7 +58,17 @@
 		<dependency>
 			<groupId>org.unitils</groupId>
 			<artifactId>unitils-database</artifactId>
+            <exclusions>
+              <exclusion>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate</artifactId>
+              </exclusion>
+            </exclusions>
 		</dependency>
+        <dependency>
+          <groupId>org.unitils</groupId>
+          <artifactId>unitils-dbunit</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.unitils</groupId>
 			<artifactId>unitils-spring</artifactId>
