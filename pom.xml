@@ -30,8 +30,6 @@
 
   <properties>
     <javaVersion>1.7</javaVersion>
-    <sourceJavaVersion>1.7</sourceJavaVersion>
-    <targetJavaVersion>1.7</targetJavaVersion>
     <spring.version>4.1.6.RELEASE</spring.version>
     <unitils.version>3.4.2</unitils.version>
   </properties>
