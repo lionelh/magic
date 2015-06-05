@@ -4,6 +4,7 @@
 package be.lionelh.magic.lsiting.data.ejb;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -12,7 +13,16 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
-import be.lionelh.magic.listing.data.domain.dao.DaoFacade;
+import be.lionelh.magic.listing.data.domain.dao.facade.DaoFacade;
+import be.lionelh.magic.listing.data.domain.entities.Artist;
+import be.lionelh.magic.listing.data.domain.entities.Block;
+import be.lionelh.magic.listing.data.domain.entities.Capacity;
+import be.lionelh.magic.listing.data.domain.entities.Card;
+import be.lionelh.magic.listing.data.domain.entities.Color;
+import be.lionelh.magic.listing.data.domain.entities.Edition;
+import be.lionelh.magic.listing.data.domain.entities.Family;
+import be.lionelh.magic.listing.data.domain.entities.Rarity;
+import be.lionelh.magic.listing.data.domain.entities.TypeCard;
 import be.lionelh.magic.lsiting.data.ejb.client.MagicDataBusinessLocal;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.ArtistDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.BlockDTO;
@@ -24,6 +34,7 @@ import be.lionelh.magic.lsiting.data.ejb.client.dto.EditionDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.FamilyDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.RarityDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.TypeCardDTO;
+import be.lionelh.magic.lsiting.data.ejb.utils.DTOConverter;
 
 
 /**
@@ -37,13 +48,16 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
 
     @Inject
     private DaoFacade daoFacade;
+    
+    @Inject
+    private DTOConverter converter;
 
     /**
      * @see be.lionelh.magic.lsiting.data.ejb.client.MagicDataBusinessLocal#createArtist(be.lionelh.magic.lsiting.data.ejb.client.dto.ArtistDTO)
      */
     @Override
     public ArtistDTO createArtist(ArtistDTO inArtist) {
-        return null;
+        return this.converter.getArtistDTO(this.daoFacade.createArtist(converter.getArtist(inArtist))); 
     }
 
     /**
@@ -51,7 +65,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ArtistDTO updteArtist(ArtistDTO inArtist) {
-        return null;
+    	return this.converter.getArtistDTO(this.daoFacade.updateArtist(converter.getArtist(inArtist)));
     }
 
     /**
@@ -59,7 +73,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<ArtistDTO> findAllArtists() {
-        return null;
+    	List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	for(Artist a : this.daoFacade.findAllArtists()) {
+    		l.add(this.converter.getArtistDTO(a));
+    	}
+        return l;
     }
 
     /**
@@ -67,7 +85,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ArtistDTO findArtistById(Long inId) {
-        return null;
+    	return this.converter.getArtistDTO(this.daoFacade.findArtistById(inId));
     }
 
     /**
@@ -75,7 +93,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ArtistDTO findArtistByName(String inName) {
-        return null;
+    	return this.converter.getArtistDTO(this.daoFacade.findArtistByName(inName));
     }
 
     /**
@@ -83,6 +101,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeArtist(ArtistDTO inArtist) {
+    	this.daoFacade.removeArtist(this.converter.getArtist(inArtist));
     }
 
     /**
@@ -90,7 +109,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public BlockDTO createBlock(BlockDTO inBlock) {
-        return null;
+    	return this.converter.getBlockDTO(this.daoFacade.createBlock(converter.getBlock(inBlock)));
     }
 
     /**
@@ -98,7 +117,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public BlockDTO updteBlock(BlockDTO inBlock) {
-        return null;
+    	return this.converter.getBlockDTO(this.daoFacade.updateBlock(converter.getBlock(inBlock)));
     }
 
     /**
@@ -106,7 +125,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<BlockDTO> findAllBlocks() {
-        return null;
+    	List<BlockDTO> l = new ArrayList<BlockDTO>();
+    	for(Block b : this.daoFacade.findAllBlocks()) {
+    		l.add(this.converter.getBlockDTO(b));
+    	}
+        return l;
     }
 
     /**
@@ -114,7 +137,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public BlockDTO findBlockById(Long inId) {
-        return null;
+    	return this.converter.getBlockDTO(this.daoFacade.findBlockById(inId));
     }
 
     /**
@@ -122,7 +145,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public BlockDTO findBlockByName(String inName) {
-        return null;
+    	return this.converter.getBlockDTO(this.daoFacade.findBlockByName(inName));
     }
 
     /**
@@ -130,7 +153,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public BlockDTO findBlockByNom(String inNom) {
-        return null;
+    	return this.converter.getBlockDTO(this.daoFacade.findBlockByNom(inNom));
     }
 
     /**
@@ -138,7 +161,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeBlock(BlockDTO inBlock) {
-
+    	this.daoFacade.removeBlock(this.converter.getBlock(inBlock));
     }
 
     /**
@@ -146,7 +169,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CapacityDTO createCapacity(CapacityDTO inCapacity) {
-        return null;
+    	return this.converter.getCapacityDTO(this.daoFacade.createCapacity(converter.getCapacity(inCapacity)));
     }
 
     /**
@@ -154,7 +177,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CapacityDTO updteCapacity(CapacityDTO inCapacity) {
-        return null;
+    	return this.converter.getCapacityDTO(this.daoFacade.updateCapacity(converter.getCapacity(inCapacity)));
     }
 
     /**
@@ -162,7 +185,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CapacityDTO> findAllCapacities() {
-        return null;
+    	List<CapacityDTO> l = new ArrayList<CapacityDTO>();
+    	for(Capacity c : this.daoFacade.findAllCapacities()) {
+    		l.add(this.converter.getCapacityDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -170,7 +197,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CapacityDTO findCapacityById(Long inId) {
-        return null;
+    	return this.converter.getCapacityDTO(this.daoFacade.findCapacityById(inId));
     }
 
     /**
@@ -178,7 +205,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CapacityDTO findCapacityByName(String inName) {
-        return null;
+    	return this.converter.getCapacityDTO(this.daoFacade.findCapacityByName(inName));
     }
 
     /**
@@ -186,7 +213,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CapacityDTO findCapacityByNom(String inNom) {
-        return null;
+    	return this.converter.getCapacityDTO(this.daoFacade.findCapacityByNom(inNom));
     }
 
     /**
@@ -194,7 +221,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeCapacity(CapacityDTO inCapacity) {
-
+    	this.daoFacade.removeCapacity(this.converter.getCapacity(inCapacity));
     }
 
     /**
@@ -202,7 +229,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDTO createCard(CardDTO inCard) {
-        return null;
+    	return this.converter.getCardDTO(this.daoFacade.createCard(converter.getCard(inCard)));
     }
 
     /**
@@ -210,7 +237,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDTO updteCard(CardDTO inCard) {
-        return null;
+    	return this.converter.getCardDTO(this.daoFacade.updateCard(converter.getCard(inCard)));
     }
 
     /**
@@ -218,7 +245,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findAllCards() {
-        return null;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findAllCards()) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -226,7 +257,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDTO findCardById(Long inId) {
-        return null;
+    	return this.converter.getCardDTO(this.daoFacade.findCardById(inId));
     }
 
     /**
@@ -234,7 +265,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDTO findCardByName(String inName) {
-        return null;
+    	return this.converter.getCardDTO(this.daoFacade.findCardByName(inName));
     }
 
     /**
@@ -242,7 +273,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDTO findCardByNom(String inNom) {
-        return null;
+    	return this.converter.getCardDTO(this.daoFacade.findCardByNom(inNom));
     }
 
     /**
@@ -250,7 +281,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByColor(ColorDTO inColor) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -258,7 +294,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByTypeCard(TypeCardDTO inTypeCard) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -266,7 +307,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByFamily(FamilyDTO inFamily) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -274,7 +320,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByEdition(EditionDTO inEdition) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -282,7 +333,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByRarity(RarityDTO inRarity) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -290,7 +346,12 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByCapacity(CapacityDTO inCapacity) {
-        return null;
+    	throw new RuntimeException("Not yet implemented !");
+    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
+    	//for(Artist a : this.daoFacade.findAllArtists()) {
+    	//	l.add(this.converter.getArtistDTO(a));
+    	//}
+        //return l;
     }
 
     /**
@@ -298,7 +359,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeCard(CardDTO inCard) {
-
+    	this.daoFacade.removeCard(this.converter.getCard(inCard));
     }
 
     /**
@@ -306,7 +367,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardEditionDTO createCardEdition(CardEditionDTO inCardEdition) {
-        return null;
+    	return this.converter.getCardEditionDTO(this.daoFacade.createCardEdition(converter.getCardEdition(inCardEdition)));
     }
 
     /**
@@ -314,7 +375,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardEditionDTO updteCardEdition(CardEditionDTO inCardEdition) {
-        return null;
+    	return this.converter.getCardEditionDTO(this.daoFacade.updateCardEdition(converter.getCardEdition(inCardEdition)));
     }
 
     /**
@@ -322,7 +383,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeCardEdition(CardEditionDTO inCardEdition) {
-
+    	this.daoFacade.removeCardEdition(this.converter.getCardEdition(inCardEdition));
     }
 
     /**
@@ -330,7 +391,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO createColor(ColorDTO inColor) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.createColor(converter.getColor(inColor)));
     }
 
     /**
@@ -338,7 +399,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO updteColor(ColorDTO inColor) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.updateColor(converter.getColor(inColor)));
     }
 
     /**
@@ -346,7 +407,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<ColorDTO> findAllColors() {
-        return null;
+    	List<ColorDTO> l = new ArrayList<ColorDTO>();
+    	for(Color c : this.daoFacade.findAllColors()) {
+    		l.add(this.converter.getColorDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -354,7 +419,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO findColorById(Long inId) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.findColorById(inId));
     }
 
     /**
@@ -362,7 +427,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO findColorByName(String inName) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.findColorByName(inName));
     }
 
     /**
@@ -370,7 +435,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO findColorByNom(String inNom) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.findColorByNom(inNom));
     }
 
     /**
@@ -378,7 +443,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public ColorDTO findColorByAbbreviation(String inAbbreviation) {
-        return null;
+    	return this.converter.getColorDTO(this.daoFacade.findColorByAbbreviation(inAbbreviation));
     }
 
     /**
@@ -386,7 +451,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeColor(ColorDTO inColor) {
-
+    	this.daoFacade.removeColor(this.converter.getColor(inColor));
     }
 
     /**
@@ -394,7 +459,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO createEdition(EditionDTO inEdition) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.createEdition(converter.getEdition(inEdition)));
     }
 
     /**
@@ -402,7 +467,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO updteEdition(EditionDTO inEdition) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.updateEdition(converter.getEdition(inEdition)));
     }
 
     /**
@@ -410,7 +475,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<EditionDTO> findAllEditions() {
-        return null;
+    	List<EditionDTO> l = new ArrayList<EditionDTO>();
+    	for(Edition e : this.daoFacade.findAllEditions()) {
+    		l.add(this.converter.getEditionDTO(e));
+    	}
+        return l;
     }
 
     /**
@@ -418,7 +487,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO findEditionById(Long inId) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.findEditionById(inId));
     }
 
     /**
@@ -426,7 +495,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO findEditionByName(String inName) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.findEditionByName(inName));
     }
 
     /**
@@ -434,7 +503,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO findEditionByNom(String inNom) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.findEditionByNom(inNom));
     }
 
     /**
@@ -442,7 +511,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public EditionDTO findEditionByAbbreviation(String inAbbreviation) {
-        return null;
+    	return this.converter.getEditionDTO(this.daoFacade.findEditionByAbbreviation(inAbbreviation));
     }
 
     /**
@@ -450,7 +519,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeEdition(EditionDTO inEdition) {
-
+    	this.daoFacade.removeEdition(this.converter.getEdition(inEdition));
     }
 
     /**
@@ -458,7 +527,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public FamilyDTO createFamily(FamilyDTO inFamily) {
-        return null;
+    	return this.converter.getFamilyDTO(this.daoFacade.createFamily(converter.getFamily(inFamily)));
     }
 
     /**
@@ -466,7 +535,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public FamilyDTO updteFamily(FamilyDTO inFamily) {
-        return null;
+    	return this.converter.getFamilyDTO(this.daoFacade.updateFamily(converter.getFamily(inFamily)));
     }
 
     /**
@@ -474,7 +543,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<FamilyDTO> findAllFamilies() {
-        return null;
+    	List<FamilyDTO> l = new ArrayList<FamilyDTO>();
+    	for(Family f : this.daoFacade.findAllFamilies()) {
+    		l.add(this.converter.getFamilyDTO(f));
+    	}
+        return l;
     }
 
     /**
@@ -482,7 +555,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public FamilyDTO findFamilyById(Long inId) {
-        return null;
+    	return this.converter.getFamilyDTO(this.daoFacade.findFamilyById(inId));
     }
 
     /**
@@ -490,7 +563,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public FamilyDTO findFamilyByName(String inName) {
-        return null;
+    	return this.converter.getFamilyDTO(this.daoFacade.findFamilyByName(inName));
     }
 
     /**
@@ -498,7 +571,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public FamilyDTO findFamilyByNom(String inNom) {
-        return null;
+    	return this.converter.getFamilyDTO(this.daoFacade.findFamilyByNom(inNom));
     }
 
     /**
@@ -506,7 +579,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeFamily(FamilyDTO inFamily) {
-
+    	this.daoFacade.removeFamily(this.converter.getFamily(inFamily));
     }
 
     /**
@@ -514,7 +587,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public RarityDTO createRarity(RarityDTO inRarity) {
-        return null;
+    	return this.converter.getRarityDTO(this.daoFacade.createRarity(converter.getRarity(inRarity)));
     }
 
     /**
@@ -522,7 +595,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public RarityDTO updteRarity(RarityDTO inRarity) {
-        return null;
+    	return this.converter.getRarityDTO(this.daoFacade.updateRarity(converter.getRarity(inRarity)));
     }
 
     /**
@@ -530,7 +603,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<RarityDTO> findAllRarities() {
-        return null;
+    	List<RarityDTO> l = new ArrayList<RarityDTO>();
+    	for(Rarity r : this.daoFacade.findAllRarities()) {
+    		l.add(this.converter.getRarityDTO(r));
+    	}
+        return l;
     }
 
     /**
@@ -538,7 +615,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public RarityDTO findRarityById(Long inId) {
-        return null;
+    	return this.converter.getRarityDTO(this.daoFacade.findRarityById(inId));
     }
 
     /**
@@ -546,7 +623,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public RarityDTO findRarityByAbbreviation(String inAbbreviation) {
-        return null;
+    	return this.converter.getRarityDTO(this.daoFacade.findRarityByAbbreviation(inAbbreviation));
     }
 
     /**
@@ -554,7 +631,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeRarity(RarityDTO inRarity) {
-
+    	this.daoFacade.removeRarity(this.converter.getRarity(inRarity));
     }
 
     /**
@@ -562,7 +639,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public TypeCardDTO createTypeCard(TypeCardDTO inTypeCard) {
-        return null;
+    	return this.converter.getTypeCardDTO(this.daoFacade.createTypeCard(converter.getTypeCard(inTypeCard)));
     }
 
     /**
@@ -570,7 +647,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public TypeCardDTO updteTypeCard(TypeCardDTO inTypeCard) {
-        return null;
+    	return this.converter.getTypeCardDTO(this.daoFacade.updateTypeCard(converter.getTypeCard(inTypeCard)));
     }
 
     /**
@@ -578,7 +655,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<TypeCardDTO> findAllTypeCards() {
-        return null;
+    	List<TypeCardDTO> l = new ArrayList<TypeCardDTO>();
+    	for(TypeCard tc : this.daoFacade.findAllTypeCards()) {
+    		l.add(this.converter.getTypeCardDTO(tc));
+    	}
+        return l;
     }
 
     /**
@@ -586,7 +667,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public TypeCardDTO findTypeCardById(Long inId) {
-        return null;
+    	return this.converter.getTypeCardDTO(this.daoFacade.findTypeCardById(inId));
     }
 
     /**
@@ -594,7 +675,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public TypeCardDTO findTypeCardByName(String inName) {
-        return null;
+    	return this.converter.getTypeCardDTO(this.daoFacade.findTypeCardByName(inName));
     }
 
     /**
@@ -602,7 +683,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public TypeCardDTO findTypeCardByNom(String inNom) {
-        return null;
+    	return this.converter.getTypeCardDTO(this.daoFacade.findTypeCardByNom(inNom));
     }
 
     /**
@@ -610,7 +691,7 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public void removeTypeCard(TypeCardDTO inTypeCard) {
-
+    	this.daoFacade.removeTypeCard(this.converter.getTypeCard(inTypeCard));
     }
 
 }
