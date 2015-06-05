@@ -3,6 +3,8 @@
  */
 package be.lionelh.magic.lsiting.data.ejb.utils;
 
+import javax.inject.Named;
+
 import be.lionelh.magic.listing.data.domain.entities.Artist;
 import be.lionelh.magic.listing.data.domain.entities.Block;
 import be.lionelh.magic.listing.data.domain.entities.Capacity;
@@ -27,6 +29,7 @@ import be.lionelh.magic.lsiting.data.ejb.client.dto.TypeCardDTO;
 /**
  * @author Lionel
  */
+@Named("DTOConverter")
 public class DTOConverter {
 
 	public ArtistDTO getArtistDTO(Artist inArtist) {
