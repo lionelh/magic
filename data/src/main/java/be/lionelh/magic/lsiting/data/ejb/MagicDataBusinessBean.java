@@ -28,6 +28,7 @@ import be.lionelh.magic.lsiting.data.ejb.client.dto.ArtistDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.BlockDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CapacityDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CardDTO;
+import be.lionelh.magic.lsiting.data.ejb.client.dto.CardDetailsDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CardEditionDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.ColorDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.EditionDTO;
@@ -360,6 +361,14 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
     @Override
     public void removeCard(CardDTO inCard) {
     	this.daoFacade.removeCard(this.converter.getCard(inCard));
+    }
+
+    /**
+     * @see be.lionelh.magic.lsiting.data.ejb.client.MagicDataBusinessLocal#getCardDetils(be.lionelh.magic.lsiting.data.ejb.client.dto.CardDTO)
+     */
+    @Override
+    public CardDetailsDTO getCardDetails(CardDTO inCard) {
+    	throw new RuntimeException("Not yet implemented !");
     }
 
     /**

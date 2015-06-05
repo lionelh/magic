@@ -9,6 +9,7 @@ import be.lionelh.magic.lsiting.data.ejb.client.dto.ArtistDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.BlockDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CapacityDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CardDTO;
+import be.lionelh.magic.lsiting.data.ejb.client.dto.CardDetailsDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.CardEditionDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.ColorDTO;
 import be.lionelh.magic.lsiting.data.ejb.client.dto.EditionDTO;
@@ -58,6 +59,8 @@ public interface MagicDataBusinessLocal {
     List<CardDTO> findCardsByRarity(RarityDTO inRarity);
     List<CardDTO> findCardsByCapacity(CapacityDTO inCapacity);
     void removeCard(CardDTO inCard);
+
+    CardDetailsDTO getCardDetails(CardDTO inCard);
 
     CardEditionDTO createCardEdition(CardEditionDTO inCardEdition);
     CardEditionDTO updteCardEdition(CardEditionDTO inCardEdition);
