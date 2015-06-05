@@ -98,7 +98,7 @@ public class Artist implements Serializable, Storable {
 
     @Override
     public String toString() {
-        return "Card{" + "id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", lastUpdateDate=" + lastUpdateDate + '}';
+        return "Artist{" + "id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", lastUpdateDate=" + lastUpdateDate + '}';
     }
 
     /**
