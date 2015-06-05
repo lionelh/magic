@@ -3,17 +3,17 @@
 
   <!-- Information about the master eclipse project -->
   <!-- for home usage -->
-  <!--parent>
-    <groupId>be.lionelh.master</groupId>
-    <artifactId>master-pom</artifactId>
-    <version>1.0.1</version>
-  </parent-->
-  <!-- for work usage -->
   <parent>
-    <groupId>be.smals.master</groupId>
+    <groupId>be.lionelh.master</groupId>
     <artifactId>master-pom</artifactId>
     <version>3.0.6</version>
   </parent>
+  <!-- for work usage -->
+  <!--parent>
+    <groupId>be.smals.master</groupId>
+    <artifactId>master-pom</artifactId>
+    <version>3.0.6</version>
+  </parent-->
 
   <groupId>be.lionelh.magic</groupId>
   <!-- General attributes -->
