@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,6 +32,9 @@ import be.lionelh.magic.listing.data.domain.utils.Storable;
 @Table(name = "magic_card_edition")
 @EntityListeners({DatesListener.class})
 @SuppressWarnings("serial")
+@NamedQueries({
+    @NamedQuery(name = "CardEdition.FINDBYCARD", query = "SELECT ce FROM CardEdition ce WHERE ce.card.id = :cardId"),
+})
 public class CardEdition implements Serializable, Storable {
 
     @EmbeddedId

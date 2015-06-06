@@ -11,7 +11,6 @@ import be.lionelh.magic.listing.data.domain.dao.CardEditionDao;
 import be.lionelh.magic.listing.data.domain.entities.Card;
 import be.lionelh.magic.listing.data.domain.entities.CardEdition;
 import be.lionelh.magic.listing.data.domain.entities.CardEditionPK;
-import be.lionelh.magic.listing.data.domain.entities.Edition;
 
 /**
  * @author lh
@@ -38,7 +37,7 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	 */
 	@Override
 	public List<CardEdition> findAll() {
-		return this.em.createNamedQuery("CardEditionDto.FINDALL", CardEdition.class).getResultList();
+		return this.em.createNamedQuery("CardEdition.FINDALL", CardEdition.class).getResultList();
 	}
 
 	/**
@@ -54,18 +53,8 @@ public class CardEditionDaoImpl implements CardEditionDao {
 	 */
 	@Override
 	public List<CardEdition> findByCard(Card inCard) {
-		TypedQuery<CardEdition> query = em.createNamedQuery("CardEditionDto.FINDBYCARD", CardEdition.class);
+		TypedQuery<CardEdition> query = em.createNamedQuery("CardEdition.FINDBYCARD", CardEdition.class);
         query.setParameter("cardId", inCard.getId());
-        return query.getResultList();
-	}
-
-	/**
-	 * @see be.lionelh.magic.data.domain.dao.CardEditionDao#findByEdition(be.lionelh.magic.listing.data.domain.entities.Edition)
-	 */
-	@Override
-	public List<CardEdition> findByEdition(Edition inEdition) {
-		TypedQuery<CardEdition> query = em.createNamedQuery("CardEditionDto.FINDBYEDITION", CardEdition.class);
-        query.setParameter("editionId", inEdition.getId());
         return query.getResultList();
 	}
 

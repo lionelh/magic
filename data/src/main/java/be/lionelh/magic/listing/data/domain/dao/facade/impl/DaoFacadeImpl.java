@@ -241,6 +241,11 @@ public class DaoFacadeImpl implements DaoFacade {
 	}
 
 	@Override
+	public List<CardEdition> findCardEditionByCard(Card inCard) {
+		return this.cardEditionDao.findByCard(inCard);
+	}
+
+	@Override
 	public void removeCardEdition(CardEdition inCardEdition) {
 		this.cardEditionDao.delete(inCardEdition);
 	}

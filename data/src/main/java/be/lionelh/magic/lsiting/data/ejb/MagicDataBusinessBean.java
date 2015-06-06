@@ -18,6 +18,7 @@ import be.lionelh.magic.listing.data.domain.entities.Artist;
 import be.lionelh.magic.listing.data.domain.entities.Block;
 import be.lionelh.magic.listing.data.domain.entities.Capacity;
 import be.lionelh.magic.listing.data.domain.entities.Card;
+import be.lionelh.magic.listing.data.domain.entities.CardEdition;
 import be.lionelh.magic.listing.data.domain.entities.Color;
 import be.lionelh.magic.listing.data.domain.entities.Edition;
 import be.lionelh.magic.listing.data.domain.entities.Family;
@@ -368,7 +369,30 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public CardDetailsDTO getCardDetails(CardDTO inCard) {
-    	throw new RuntimeException("Not yet implemented !");
+    	List<CardEdition> ces = this.daoFacade.findCardEditionByCard(this.converter.getCard(inCard));
+    	CardDetailsDTO cd = new CardDetailsDTO();
+    	for(CardEdition ce : ces) {
+    		// 1) Conversion of the CardEdition object
+    		CardEditionDTO ceDto = this.converter.getCardEditionDTO(ce);
+    		// 2) Conversion of Artists linked to the CardEdition
+    		for(Artist art : ce.getArtists()) {
+    			ceDto.getArtists().add(this.converter.getArtistDTO(art));
+    		}
+    		// 3) Conversion of Capacities linked to the CardEdition
+    		for(Capacity c : ce.getCapacities()) {
+    			ceDto.getCapacities().add(this.converter.getCapacityDTO(c));
+    		}
+    		// 4) Conversion of the Block linked to the Edtion of this CardEdition
+    		ceDto.getEdition().setBlock(this.converter.getBlockDTO(ce.getEdition().getBlock()));
+    		// 5) Conversion of the Famailies linked to the Card of this CardEdition
+    		for(Family f : ce.getCard().getFamilies()) {
+    			ceDto.getCard().getFamilies().add(this.converter.getFamilyDTO(f));
+    		}
+    		// 6) Add the CardEditionDTO object to the List in CardDetailsDto object
+    		cd.getCardEditions().add(ceDto);
+
+    	}
+    	return cd;
     }
 
     /**

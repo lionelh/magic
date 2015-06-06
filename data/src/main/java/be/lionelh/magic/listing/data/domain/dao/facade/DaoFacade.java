@@ -57,6 +57,7 @@ public interface DaoFacade {
 
     CardEdition createCardEdition(CardEdition inCardEdition);
     CardEdition updateCardEdition(CardEdition inCardEdition);
+    List<CardEdition> findCardEditionByCard(Card inCard);
     void removeCardEdition(CardEdition inCardEdition);
 
     Color createColor(Color inColor);

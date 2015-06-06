@@ -1,6 +1,7 @@
 package be.lionelh.magic.lsiting.data.ejb.client.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("serial")
@@ -8,7 +9,9 @@ public class CardDetailsDTO implements Serializable {
 
 	private List<CardEditionDTO> cardEditions;
 
-	public CardDetailsDTO() { }
+	public CardDetailsDTO() {
+		this.cardEditions = new ArrayList<CardEditionDTO>();
+	}
 
 	/**
 	 * @return the cardEditions
