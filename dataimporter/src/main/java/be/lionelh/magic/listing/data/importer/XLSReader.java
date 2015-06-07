@@ -1,6 +1,5 @@
 package be.lionelh.magic.listing.data.importer;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,16 +14,15 @@ public class XLSReader {
 
 	public static void main(String[] args) {
 		try {
-			new XLSReader().read();
+			new XLSReader().read(args[0]);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	private void read() throws Exception {
-		FileInputStream file = new FileInputStream(new File(
-				"c:\\users\\lionel\\desktop\\master_new.xlsx"));
-		XSSFWorkbook workbook = new XSSFWorkbook(file);
+	private void read(String inFile) throws Exception {
+		FileInputStream fis = new FileInputStream(inFile);
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		int cardToProcess = 0;
 		String[] edtToProcess = "4E,5E,6E,7E,8E,9E,10E,A,AL,ALA,AN,AP,AQ,ARB,AVR,B,BNG,BOK,CFX,CHK,CS,DGM,DIS,DK,DKA,DS,DTK,EVE,EX,FD,FE,FRF,FUT,GP,GTC,HL,IA,IN,ISD,JOU,JU,KTK,LE,LG,LRW,M10,M11,M12,M13,M14,M15,MBS,MI,MM,MOR,MR,NE,NPH,OD,ON,P2,P3,PLC,PS,PT,PY,R,RAV,ROE,RTR,SC,SH,SHM,SOK,SOM,TE,THS,TO,TSB,TSP,U,UD,UL,US,VI,WL,WWK,ZEN"
@@ -70,6 +68,6 @@ public class XLSReader {
 		}
 		System.out.println("card to Process : " + cardToProcess);
 		workbook.close();
-		file.close();
+		fis.close();
 	}
 }
