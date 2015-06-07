@@ -7,6 +7,67 @@
   <magic_color co_id="5" co_name="Red" co_abbreviation="R" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
   <magic_color co_id="6" co_name="Land" co_abbreviation="Lnd" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
   <magic_color co_id="7" co_name="Green" co_abbreviation="G" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_color co_id="8" co_name="Gold" co_abbreviation="Gld" co_creation_date="2015-02-24 16:13:57" co_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="1" ma_representation="£A" ma_readable_value="G/W" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="2" ma_representation="£B" ma_readable_value="B" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="3" ma_representation="£D" ma_readable_value="U/W" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="4" ma_representation="£E" ma_readable_value="2/W" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="5" ma_representation="£F" ma_readable_value="2/U" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />E=2/W
+  <magic_mana_abbreviation ma_id="6" ma_representation="£G" ma_readable_value="G" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="7" ma_representation="£H" ma_readable_value="2/B" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="8" ma_representation="£I" ma_readable_value="R/U" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="9" ma_representation="£J" ma_readable_value="2/R" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="10" ma_representation="£K" ma_readable_value="B/R" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="11" ma_representation="£L" ma_readable_value="G/R" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="12" ma_representation="£M" ma_readable_value="2/G" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="13" ma_representation="£O" ma_readable_value="B/W" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="14" ma_representation="£P" ma_readable_value="R/W" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="15" ma_representation="£Q" ma_readable_value="B/G" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="16" ma_representation="£R" ma_readable_value="R" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="17" ma_representation="£S" ma_readable_value="G/U" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="18" ma_representation="£U" ma_readable_value="U" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="19" ma_representation="£V" ma_readable_value="B/U" ma_multi="1" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="20" ma_representation="£W" ma_readable_value="W" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="21" ma_representation="£!" ma_readable_value="2PV/W" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="22" ma_representation="£$" ma_readable_value="2PV/B" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="23" ma_representation="£@" ma_readable_value="2PV/G" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="24" ma_representation="£^" ma_readable_value="2PV/R" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_mana_abbreviation ma_id="25" ma_representation="£`" ma_readable_value="2PV/U" ma_multi="0" ma_creation_date="2015-02-24 16:13:57" ma_last_update_date="2015-02-24 16:13:57" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="2" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="7" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="10" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="13" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="15" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="19" />
+  <magic_color_mana_abbreviation cma_co_id="2" cma_ma_id="22" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="3" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="5" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="8" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="17" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="18" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="19" />
+  <magic_color_mana_abbreviation cma_co_id="3" cma_ma_id="25" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="1" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="3" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="4" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="13" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="14" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="20" />
+  <magic_color_mana_abbreviation cma_co_id="4" cma_ma_id="21" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="8" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="9" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="10" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="11" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="14" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="16" />
+  <magic_color_mana_abbreviation cma_co_id="5" cma_ma_id="24" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="1" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="6" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="11" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="12" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="15" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="17" />
+  <magic_color_mana_abbreviation cma_co_id="7" cma_ma_id="23" />
   <magic_type_card tc_id="7" tc_name="Sorcery" tc_nom="Rituel" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
   <magic_type_card tc_id="1" tc_name="Artifact" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
   <magic_type_card tc_id="2" tc_name="Creature" tc_creation_date="2015-02-24 16:13:57" tc_last_update_date="2015-02-24 16:13:57" />
@@ -23,24 +84,29 @@
   <magic_card ca_id="1" ca_name="AEther Spellbomb" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="1" ca_tc_id="1" />
   <magic_card ca_id="221" ca_name="Goblin King" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="5" ca_tc_id="2" />
   <magic_card ca_id="527" ca_name="Swamp" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="6" ca_tc_id="10" />
+  <magic_card ca_id="2" ca_name="Lord of Tresserhorn" ca_creation_date="2015-02-24 16:13:57" ca_last_update_date="2015-02-24 16:13:57" ca_co_id="8" ca_tc_id="2" />
   <magic_block bl_id="2" bl_name="Ice age" bl_creation_date="2015-02-24 16:13:57" bl_last_update_date="2015-02-24 16:13:57" bl_nom="Ere glaciaire" />
   <magic_block bl_id="1" bl_name="Mirrodin" bl_creation_date="2015-02-24 16:13:57" bl_last_update_date="2015-02-24 16:13:57" />
   <magic_edition ed_id="2" ed_name="Fourth edition" ed_creation_date="2015-02-24 16:13:57" ed_last_update_date="2015-02-24 16:13:57" ed_symbol="0" ed_nom="4eme edition" ed_abbreviation="4E" />
   <magic_edition ed_id="1" ed_name="Mirrodin" ed_creation_date="2015-02-24 16:13:57" ed_last_update_date="2015-02-24 16:13:57" ed_symbol="1" ed_abbreviation="MR" />
+  <magic_edition ed_id="3" ed_name="Alliances" ed_creation_date="2015-02-24 16:13:57" ed_last_update_date="2015-02-24 16:13:57" ed_symbol="1" ed_abbreviation="AL" />
   <magic_family fa_id="11" fa_name="Soldier" fa_nom="Soldat" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_family fa_id="16" fa_name="Knight" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_family fa_id="24" fa_name="Wall" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_family fa_id="33" fa_name="Spirit" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
+  <magic_family fa_id="34" fa_name="Legend" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_family fa_id="50" fa_name="Goblin" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_family fa_id="98" fa_name="Swamp" fa_creation_date="2015-02-24 16:13:57" fa_last_update_date="2015-02-24 16:13:57" />
   <magic_card_family caf_ca_id="221" caf_fa_id="50" />
   <magic_card_family caf_ca_id="527" caf_fa_id="98" />
+  <magic_card_family caf_ca_id="2" caf_fa_id="34" />
   <magic_rarity ra_id="1" ra_abbreviation="C" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
   <magic_rarity ra_id="2" ra_abbreviation="U" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
   <magic_rarity ra_id="3" ra_abbreviation="R" ra_creation_date="2015-02-24 16:13:57" ra_last_update_date="2015-02-24 16:13:57" />
-  <magic_card_edition ce_ca_id="1" ce_ed_id="1" ce_versions="1" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1"    />
-  <magic_card_edition ce_ca_id="48" ce_ed_id="2" ce_versions="1" ce_ra_id="2" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1"    />
-  <magic_card_edition ce_ca_id="221" ce_ed_id="2" ce_versions="1" ce_ra_id="3" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="1RR" ce_power="2" ce_toughness="2"  />
+  <magic_card_edition ce_ca_id="2" ce_ed_id="3" ce_versions="1" ce_ra_id="3" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="£1£U£B£R" ce_power="10" ce_toughness="4"  />
+  <magic_card_edition ce_ca_id="1" ce_ed_id="1" ce_versions="1" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="£1"    />
+  <magic_card_edition ce_ca_id="48" ce_ed_id="2" ce_versions="1" ce_ra_id="2" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="£1"    />
+  <magic_card_edition ce_ca_id="221" ce_ed_id="2" ce_versions="1" ce_ra_id="3" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57" ce_cost="£1£R£R" ce_power="2" ce_toughness="2"  />
   <magic_card_edition ce_ca_id="527" ce_ed_id="2" ce_versions="3" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57"     />
   <magic_card_edition ce_ca_id="527" ce_ed_id="1" ce_versions="4" ce_ra_id="1" ce_creation_date="2015-02-24 16:13:57" ce_last_update_date="2015-02-24 16:13:57"     />
   <magic_artist art_id="1" art_name="Jim Nelson" art_creation_date="2015-02-24 16:13:57" art_last_update_date="2015-02-24 16:13:57" />
@@ -64,4 +130,5 @@
   <magic_card_edition_artist cea_ca_id="527" cea_ed_id="1" cea_art_id="75" />
   <magic_capacity cp_id="2" cp_name="First strike" cp_nom="Initiative" cp_creation_date="2015-02-24 16:13:57" cp_last_update_date="2015-02-24 16:13:57" />
   <magic_capacity cp_id="1" cp_name="Haste" cp_creation_date="2015-02-24 16:13:57" cp_last_update_date="2015-02-24 16:13:57" />
+  <magic_card_edition_capacity cec_ca_id="221" cec_ed_id="2" cec_cp_id="1" />
 </dataset>

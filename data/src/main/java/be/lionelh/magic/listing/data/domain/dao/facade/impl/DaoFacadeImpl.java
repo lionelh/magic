@@ -196,33 +196,33 @@ public class DaoFacadeImpl implements DaoFacade {
 	}
 
 	@Override
-	public List<Card> findCardsByColor(Color inColor) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByColor(Long inColorId) {
+		return this.cardDao.findByColor(inColorId);
 	}
 
 	@Override
-	public List<Card> findCardsByTypeCard(TypeCard inTypeCard) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByTypeCard(Long inTypeCardId) {
+		return this.cardDao.findByTypeCard(inTypeCardId);
 	}
 
 	@Override
-	public List<Card> findCardsByFamily(Family inFamily) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByFamily(Long inFamilyId) {
+		return this.cardDao.findByFamily(inFamilyId);
 	}
 
 	@Override
-	public List<Card> findCardsByEdition(Edition inEdition) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByEdition(Long inEditionId) {
+		return this.cardDao.findByEdition(inEditionId);
 	}
 
 	@Override
-	public List<Card> findCardsByRarity(Rarity inRarity) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByRarity(Long inRarityId) {
+		return this.cardDao.findByRarity(inRarityId);
 	}
 
 	@Override
-	public List<Card> findCardsByCapacity(Capacity inCapacity) {
-		throw new RuntimeException("Not yet implemented !");
+	public List<Card> findCardsByCapacity(Long inCapacityId) {
+		return this.cardDao.findByCapacity(inCapacityId);
 	}
 
 	@Override

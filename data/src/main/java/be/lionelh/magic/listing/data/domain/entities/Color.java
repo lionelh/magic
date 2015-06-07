@@ -12,6 +12,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -61,6 +64,10 @@ public class Color implements Serializable, Storable {
 
     @OneToMany(mappedBy = "color", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private List<Card> cards;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinTable(name = "magic_color_mana_abbreviation", joinColumns = @JoinColumn(name = "CMA_CO_ID"), inverseJoinColumns = @JoinColumn(name = "CMA_MA_ID"))
+    private List<ManaAbbreviation> manaAbbreviations;
 
     public Color() {
     }
@@ -121,7 +128,21 @@ public class Color implements Serializable, Storable {
         this.lastUpdateDate = lastUpdateDate;
     }
 
-    @Override
+    /**
+	 * @return the manaAbbreviations
+	 */
+	public List<ManaAbbreviation> getManaAbbreviations() {
+		return manaAbbreviations;
+	}
+
+	/**
+	 * @param manaAbbreviations the manaAbbreviations to set
+	 */
+	public void setManaAbbreviations(List<ManaAbbreviation> manaAbbreviations) {
+		this.manaAbbreviations = manaAbbreviations;
+	}
+
+	@Override
     public String toString() {
         return "Color{" + "id=" + id + ", name=" + name + ", nom=" + nom + ", creationDate=" + creationDate + ", lastUpdateDate=" + lastUpdateDate + '}';
     }

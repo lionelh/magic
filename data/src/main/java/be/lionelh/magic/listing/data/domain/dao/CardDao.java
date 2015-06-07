@@ -15,5 +15,11 @@ public interface CardDao {
     Card findByName(String inName);
     Card findByNom(String inNom);
     Card update(Card inCard);
+    List<Card> findByTypeCard(Long inTypeCardId);
+    List<Card> findByFamily(Long inFamilyId);
+    List<Card> findByEdition(Long inEditionId);
+    List<Card> findByRarity(Long inRarityId);
+    List<Card> findByCapacity(Long inCapacityId);
+    List<Card> findByColor(Long inColorId);
     void delete(Card inCard);
 }

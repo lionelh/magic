@@ -40,7 +40,7 @@ public class FamilyDaoTest {
         Family newFamily = this.familyDao.create(f);
         assertNotNull(newFamily);
         assertNotNull(newFamily.getId());
-        assertEquals(7, this.familyDao.findAll().size());
+        assertEquals(8, this.familyDao.findAll().size());
         assertEquals("Family 001", newFamily.getName());
     }
 
@@ -48,7 +48,7 @@ public class FamilyDaoTest {
     public void testFindAll() {
         List<Family> l = this.familyDao.findAll();
         assertNotNull(l);
-        assertEquals(6, l.size());
+        assertEquals(7, l.size());
     }
 
     @Test
@@ -98,6 +98,6 @@ public class FamilyDaoTest {
 
         this.familyDao.delete(f);
         assertNull(this.familyDao.findById(50L));
-        assertEquals(5, this.familyDao.findAll().size());
+        assertEquals(6, this.familyDao.findAll().size());
     }
 }

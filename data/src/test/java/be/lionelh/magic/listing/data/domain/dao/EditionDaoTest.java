@@ -41,7 +41,7 @@ public class EditionDaoTest {
         Edition newEdition = this.editionDao.create(e);
         assertNotNull(newEdition);
         assertNotNull(newEdition.getId());
-        assertEquals(3, this.editionDao.findAll().size());
+        assertEquals(4, this.editionDao.findAll().size());
         assertEquals("Edition 001", newEdition.getName());
     }
 
@@ -49,7 +49,7 @@ public class EditionDaoTest {
     public void testFindAll() {
         List<Edition> l = this.editionDao.findAll();
         assertNotNull(l);
-        assertEquals(2, l.size());
+        assertEquals(3, l.size());
     }
 
     @Test
@@ -107,6 +107,6 @@ public class EditionDaoTest {
 
         this.editionDao.delete(e);
         assertNull(this.editionDao.findById(2L));
-        assertEquals(1, this.editionDao.findAll().size());
+        assertEquals(2, this.editionDao.findAll().size());
     }
 }

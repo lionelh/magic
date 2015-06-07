@@ -40,7 +40,7 @@ public class ColorDaoTest {
         Color newColor = this.colorDao.create(c);
         assertNotNull(newColor);
         assertNotNull(newColor.getId());
-        assertEquals(8, this.colorDao.findAll().size());
+        assertEquals(9, this.colorDao.findAll().size());
         assertEquals("Color 001", newColor.getName());
     }
 
@@ -48,7 +48,7 @@ public class ColorDaoTest {
     public void testFindAll() {
         List<Color> l = this.colorDao.findAll();
         assertNotNull(l);
-        assertEquals(7, l.size());
+        assertEquals(8, l.size());
     }
 
     @Test
@@ -106,6 +106,6 @@ public class ColorDaoTest {
 
         this.colorDao.delete(c);
         assertNull(this.colorDao.findById(2L));
-        assertEquals(6, this.colorDao.findAll().size());
+        assertEquals(7, this.colorDao.findAll().size());
     }
 }

@@ -229,7 +229,7 @@ public class DaoFacadeTest {
     }
 
     @Test
-    public void testRemoveCaapcity() {
+    public void testRemoveCapacity() {
         Capacity c = this.bean.findCapacityById(2L);
 
         this.bean.removeCapacity(c);
@@ -258,7 +258,7 @@ public class DaoFacadeTest {
         Card newCard = this.bean.createCard(c);
         assertNotNull(newCard);
         assertNotNull(newCard.getId());
-        assertEquals(5, this.bean.findAllCards().size());
+        assertEquals(6, this.bean.findAllCards().size());
         assertEquals(new Long(528), newCard.getId());
         assertEquals("Card003", newCard.getName());
     }
@@ -267,7 +267,58 @@ public class DaoFacadeTest {
     public void testFindAllCards() {
         List<Card> l = this.bean.findAllCards();
         assertNotNull(l);
-        assertEquals(4, l.size());
+        assertEquals(5, l.size());
+    }
+
+    @Test
+    public void testFindCardsByColorWithAbbreviation() {
+    	Color color = this.bean.findColorByName("Red");
+    	List<Card> l = this.bean.findCardsByColor(color.getId());
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindCardsByColorWithoutAbbreviation() {
+    	Color color = this.bean.findColorByName("Land");
+    	List<Card> l = this.bean.findCardsByColor(color.getId());
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
+    }
+
+    @Test
+    public void testFindCardsByTypeCard() {
+    	List<Card> l = this.bean.findCardsByTypeCard(1L);
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindCardsByFamily() {
+    	List<Card> l = this.bean.findCardsByFamily(34L);
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
+    }
+
+    @Test
+    public void testFindCardsByEdition() {
+    	List<Card> l = this.bean.findCardsByEdition(2L);
+    	assertNotNull(l);
+    	assertEquals(3, l.size());
+    }
+
+    @Test
+    public void testFindCardsByRarity() {
+    	List<Card> l = this.bean.findCardsByRarity(3L);
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindCardsByCapacity() {
+    	List<Card> l = this.bean.findCardsByCapacity(1L);
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
     }
 
     @Test
@@ -317,7 +368,7 @@ public class DaoFacadeTest {
 
         this.bean.removeCard(c);
         assertNull(this.bean.findCardById(221L));
-        assertEquals(3, this.bean.findAllCards().size());
+        assertEquals(4, this.bean.findAllCards().size());
     }
 
     @Test
@@ -328,7 +379,7 @@ public class DaoFacadeTest {
         Color newColor = this.bean.createColor(c);
         assertNotNull(newColor);
         assertNotNull(newColor.getId());
-        assertEquals(8, this.bean.findAllColors().size());
+        assertEquals(9, this.bean.findAllColors().size());
         assertEquals("Color 001", newColor.getName());
     }
 
@@ -336,7 +387,7 @@ public class DaoFacadeTest {
     public void testFindAllColors() {
         List<Color> l = this.bean.findAllColors();
         assertNotNull(l);
-        assertEquals(7, l.size());
+        assertEquals(8, l.size());
     }
 
     @Test
@@ -394,7 +445,7 @@ public class DaoFacadeTest {
 
         this.bean.removeColor(c);
         assertNull(this.bean.findColorById(2L));
-        assertEquals(6, this.bean.findAllColors().size());
+        assertEquals(7, this.bean.findAllColors().size());
     }
 
     @Test
@@ -406,7 +457,7 @@ public class DaoFacadeTest {
         Edition newEdition = this.bean.createEdition(e);
         assertNotNull(newEdition);
         assertNotNull(newEdition.getId());
-        assertEquals(3, this.bean.findAllEditions().size());
+        assertEquals(4, this.bean.findAllEditions().size());
         assertEquals("Edition 001", newEdition.getName());
     }
 
@@ -414,7 +465,7 @@ public class DaoFacadeTest {
     public void testFindAllEditions() {
         List<Edition> l = this.bean.findAllEditions();
         assertNotNull(l);
-        assertEquals(2, l.size());
+        assertEquals(3, l.size());
     }
 
     @Test
@@ -472,7 +523,7 @@ public class DaoFacadeTest {
 
         this.bean.removeEdition(e);
         assertNull(this.bean.findEditionById(2L));
-        assertEquals(1, this.bean.findAllEditions().size());
+        assertEquals(2, this.bean.findAllEditions().size());
     }
 
     @Test
@@ -483,7 +534,7 @@ public class DaoFacadeTest {
         Family newFamily = this.bean.createFamily(f);
         assertNotNull(newFamily);
         assertNotNull(newFamily.getId());
-        assertEquals(7, this.bean.findAllFamilies().size());
+        assertEquals(8, this.bean.findAllFamilies().size());
         assertEquals("Family 001", newFamily.getName());
     }
 
@@ -491,7 +542,7 @@ public class DaoFacadeTest {
     public void testFindAllFamilies() {
         List<Family> l = this.bean.findAllFamilies();
         assertNotNull(l);
-        assertEquals(6, l.size());
+        assertEquals(7, l.size());
     }
 
     @Test
@@ -541,11 +592,11 @@ public class DaoFacadeTest {
 
         this.bean.removeFamily(f);
         assertNull(this.bean.findFamilyById(50L));
-        assertEquals(5, this.bean.findAllFamilies().size());
+        assertEquals(6, this.bean.findAllFamilies().size());
     }
 
     @Test
-    public void testCreateRrity() {
+    public void testCreateRarity() {
         Rarity r = new Rarity();
         r.setAbbreviation("R1");
         r.setDescription("Rarity 001");

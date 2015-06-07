@@ -34,13 +34,16 @@ public class CardDaoTest {
     @TestedObject
     @SpringBeanByType
     private CardDao cardDao;
+
+    @SpringBeanByType
+    private ColorDao colorDao;
     
     @Test
     public void testCreate() {
         Card c = new Card();
         c.setName("Card003");
         Color color = new Color();
-        color.setName("COr 001");
+        color.setName("CO 001");
         color.setAbbreviation("C1");
         TypeCard tc = new TypeCard();
         tc.setName("TC 001");
@@ -56,7 +59,7 @@ public class CardDaoTest {
         Card newCard = this.cardDao.create(c);
         assertNotNull(newCard);
         assertNotNull(newCard.getId());
-        assertEquals(5, this.cardDao.findAll().size());
+        assertEquals(6, this.cardDao.findAll().size());
         assertEquals(new Long(528), newCard.getId());
         assertEquals("Card003", newCard.getName());
     }
@@ -65,7 +68,7 @@ public class CardDaoTest {
     public void testFindAll() {
         List<Card> l = this.cardDao.findAll();
         assertNotNull(l);
-        assertEquals(4, l.size());
+        assertEquals(5, l.size());
     }
 
     @Test
@@ -88,6 +91,57 @@ public class CardDaoTest {
         assertNotNull(c);
         assertEquals("Black Vise", c.getName());
         assertEquals(new Long(48), c.getId());
+    }
+
+    @Test
+    public void testFindByColorWithAbbreviation() {
+    	Color color = this.colorDao.findByName("Red");
+    	List<Card> l = this.cardDao.findByColor(color.getId());
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindByColorWithoutAbbreviation() {
+    	Color color = this.colorDao.findByName("Land");
+    	List<Card> l = this.cardDao.findByColor(color.getId());
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
+    }
+
+    @Test
+    public void testFindByTypeCard() {
+    	List<Card> l = this.cardDao.findByTypeCard(1L);
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindByFamily() {
+    	List<Card> l = this.cardDao.findByFamily(34L);
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
+    }
+
+    @Test
+    public void testFindByEdition() {
+    	List<Card> l = this.cardDao.findByEdition(2L);
+    	assertNotNull(l);
+    	assertEquals(3, l.size());
+    }
+
+    @Test
+    public void testFindByRarity() {
+    	List<Card> l = this.cardDao.findByRarity(3L);
+    	assertNotNull(l);
+    	assertEquals(2, l.size());
+    }
+
+    @Test
+    public void testFindByCapacity() {
+    	List<Card> l = this.cardDao.findByCapacity(1L);
+    	assertNotNull(l);
+    	assertEquals(1, l.size());
     }
 
     @Test
@@ -115,6 +169,6 @@ public class CardDaoTest {
 
         this.cardDao.delete(c);
         assertNull(this.cardDao.findById(221L));
-        assertEquals(3, this.cardDao.findAll().size());
+        assertEquals(4, this.cardDao.findAll().size());
     }
 }

@@ -13,6 +13,7 @@
         <class>be.lionelh.magic.listing.data.domain.entities.Color</class>
         <class>be.lionelh.magic.listing.data.domain.entities.Edition</class>
         <class>be.lionelh.magic.listing.data.domain.entities.Family</class>
+        <class>be.lionelh.magic.listing.data.domain.entities.ManaAbbreviation</class>
         <class>be.lionelh.magic.listing.data.domain.entities.Rarity</class>
         <class>be.lionelh.magic.listing.data.domain.entities.TypeCard</class>
         

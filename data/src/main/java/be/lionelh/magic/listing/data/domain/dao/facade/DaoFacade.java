@@ -47,12 +47,12 @@ public interface DaoFacade {
     Card findCardById(Long inId);
     Card findCardByName(String inName);
     Card findCardByNom(String inNom);
-    List<Card> findCardsByColor(Color inColor);
-    List<Card> findCardsByTypeCard(TypeCard inTypeCard);
-    List<Card> findCardsByFamily(Family inFamily);
-    List<Card> findCardsByEdition(Edition inEdition);
-    List<Card> findCardsByRarity(Rarity inRarity);
-    List<Card> findCardsByCapacity(Capacity inCapacity);
+    List<Card> findCardsByColor(Long inColorId);
+    List<Card> findCardsByTypeCard(Long inTypeCardId);
+    List<Card> findCardsByFamily(Long inFamilyId);
+    List<Card> findCardsByEdition(Long inEditionId);
+    List<Card> findCardsByRarity(Long inRarityId);
+    List<Card> findCardsByCapacity(Long inCapacityId);
     void removeCard(Card inCard);
 
     CardEdition createCardEdition(CardEdition inCardEdition);

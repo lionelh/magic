@@ -283,12 +283,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByColor(ColorDTO inColor) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByColor(inColor.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -296,12 +295,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByTypeCard(TypeCardDTO inTypeCard) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByTypeCard(inTypeCard.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -309,12 +307,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByFamily(FamilyDTO inFamily) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByFamily(inFamily.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -322,12 +319,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByEdition(EditionDTO inEdition) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByEdition(inEdition.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -335,12 +331,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByRarity(RarityDTO inRarity) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByRarity(inRarity.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
@@ -348,12 +343,11 @@ public class MagicDataBusinessBean implements MagicDataBusinessLocal, Serializab
      */
     @Override
     public List<CardDTO> findCardsByCapacity(CapacityDTO inCapacity) {
-    	throw new RuntimeException("Not yet implemented !");
-    	//List<ArtistDTO> l = new ArrayList<ArtistDTO>();
-    	//for(Artist a : this.daoFacade.findAllArtists()) {
-    	//	l.add(this.converter.getArtistDTO(a));
-    	//}
-        //return l;
+    	List<CardDTO> l = new ArrayList<CardDTO>();
+    	for(Card c : this.daoFacade.findCardsByCapacity(inCapacity.getId())) {
+    		l.add(this.converter.getCardDTO(c));
+    	}
+        return l;
     }
 
     /**
