@@ -26,6 +26,7 @@
 
   <modules>
     <module>data</module>
+    <module>dataimporter</module>
   </modules>
 
   <properties>
@@ -147,6 +148,12 @@
         <scope>test</scope>
       </dependency>
       <!-- COMPILE DEPENDENCIES -->
+      <dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>3.12</version>
+		<scope>compile</scope>
+	  </dependency>
       <!-- PROVIDED DEPENDENCIES -->
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
